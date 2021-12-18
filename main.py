@@ -18,21 +18,21 @@ def play(board: Board, xPlayer: Player, oPlayer: Player, shouldPrint = True):
 
 if __name__ == '__main__':
     board = Board()
-    xPlayer = RandomPlayer("X")
+    xPlayer = HumanPlayer("X")
     oPlayer = MiniMaxPlayer("O")
-    # play(board, xPlayer, oPlayer, True)
+    play(board, xPlayer, oPlayer, True)
 
-    winners = {
-        xPlayer.letter: 0,
-        oPlayer.letter: 0,
-        "-": 0
-    }
+    # winners = {
+    #     xPlayer.letter: 0,
+    #     oPlayer.letter: 0,
+    #     "-": 0
+    # }
 
-    CANTIDAD_JUEGOS = 1000
-    bar = Bar("Juegos", max=CANTIDAD_JUEGOS)
-    for _ in range(CANTIDAD_JUEGOS):
-        board = Board()
-        winners[play(board, xPlayer, oPlayer, False)] += 1
-        bar.next()
-    bar.finish()
-    print(winners)
+    # CANTIDAD_JUEGOS = 1000
+    # bar = Bar("Juegos", max=CANTIDAD_JUEGOS)
+    # for _ in range(CANTIDAD_JUEGOS):
+    #     board = Board()
+    #     winners[play(board, xPlayer, oPlayer, False)] += 1
+    #     bar.next()
+    # bar.finish()
+    # print(winners)
